@@ -1,3 +1,3 @@
-This filoe is used tyo keep track of our time.
+This file is used to keep track of our time.
 
-day one: research and coming up with gamme plan --time; 1 hour 30 minutes -- for each of us-- on discord call
+Day One: Research and coming up with game plan --Time; 1 hour 30 minutes -- for each of us-- on discord call
