@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5bf5035a98ef45828d8fd8577ca26ee3" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="DnDModel.Armor" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDModel.ArmorType" Width="1.5" PointX="1.5" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDModel.CharterSheet" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDModel.Class" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDModel.DamageType" Width="1.5" PointX="1.5" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDModel.Description" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDModel.HairStyle" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDModel.Race" Width="1.5" PointX="3" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDModel.SkinType" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDModel.Stat" Width="1.5" PointX="8.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDModel.StatName" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DnDModel.Weapon" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <AssociationConnector Association="DnDModel.FK__Armor__ArmorType__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDModel.FK__Class__Armor__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDModel.FK__CharterSh__class__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDModel.FK__CharterSh__Descr__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDModel.FK__CharterShe__Race__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDModel.FK__Class__Weapon1__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDModel.FK__Class__Weapon2__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDModel.FK__Weapons__DamageT__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDModel.FK__Descripti__HairS__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDModel.FK__Descripti__SkinT__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDModel.FK__Stat__StatsID__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="DnDModel.FK__Stat__StatsNum__4222D4EF" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

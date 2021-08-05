@@ -1,0 +1,789 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DnDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Armor">
+          <Key>
+            <PropertyRef Name="ArmorID" />
+          </Key>
+          <Property Name="ArmorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ArmorType" Type="int" Nullable="false" />
+          <Property Name="ArmorName" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ArmorType">
+          <Key>
+            <PropertyRef Name="ArmorTypeID" />
+          </Key>
+          <Property Name="ArmorTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ArmorType" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CharterSheet">
+          <Key>
+            <PropertyRef Name="SheetID" />
+          </Key>
+          <Property Name="SheetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CharterName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Race" Type="int" Nullable="false" />
+          <Property Name="Description" Type="int" Nullable="false" />
+          <Property Name="class" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Class">
+          <Key>
+            <PropertyRef Name="ClassID" />
+          </Key>
+          <Property Name="ClassID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClassName" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Armor" Type="int" Nullable="false" />
+          <Property Name="Weapon1" Type="int" Nullable="false" />
+          <Property Name="Weapon2" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DamageType">
+          <Key>
+            <PropertyRef Name="DamageTypeID" />
+          </Key>
+          <Property Name="DamageTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeOfDamage" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Description">
+          <Key>
+            <PropertyRef Name="DescriptionID" />
+          </Key>
+          <Property Name="DescriptionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HairStyle" Type="int" Nullable="false" />
+          <Property Name="HairColor" Type="varchar" MaxLength="15" />
+          <Property Name="EyeColor" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="SkinType" Type="int" Nullable="false" />
+          <Property Name="SkinColor" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HairStyle">
+          <Key>
+            <PropertyRef Name="HairStyleID" />
+          </Key>
+          <Property Name="HairStyleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HairStyle" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Race">
+          <Key>
+            <PropertyRef Name="RaceID" />
+          </Key>
+          <Property Name="RaceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RaceName" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SkinType">
+          <Key>
+            <PropertyRef Name="TypeID" />
+          </Key>
+          <Property Name="TypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SkinType" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Stat">
+          <Key>
+            <PropertyRef Name="StatsID" />
+            <PropertyRef Name="StatsNum" />
+          </Key>
+          <Property Name="StatsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StatsNum" Type="int" Nullable="false" />
+          <Property Name="RacialBonus" Type="decimal" Precision="3" Scale="1" />
+          <Property Name="BaseScore" Type="decimal" Precision="3" Scale="1" Nullable="false" />
+          <Property Name="Modifier" Type="decimal" Precision="3" Scale="1" />
+        </EntityType>
+        <EntityType Name="StatName">
+          <Key>
+            <PropertyRef Name="NameID" />
+          </Key>
+          <Property Name="NameID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StatName" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Weapons">
+          <Key>
+            <PropertyRef Name="WeaponsID" />
+          </Key>
+          <Property Name="WeaponsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DamageType" Type="int" Nullable="false" />
+          <Property Name="WeaponName" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Armor__ArmorType__38996AB5">
+          <End Role="ArmorType" Type="Self.ArmorType" Multiplicity="1" />
+          <End Role="Armor" Type="Self.Armor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ArmorType">
+              <PropertyRef Name="ArmorTypeID" />
+            </Principal>
+            <Dependent Role="Armor">
+              <PropertyRef Name="ArmorType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CharterSh__class__398D8EEE">
+          <End Role="Class" Type="Self.Class" Multiplicity="1" />
+          <End Role="CharterSheet" Type="Self.CharterSheet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassID" />
+            </Principal>
+            <Dependent Role="CharterSheet">
+              <PropertyRef Name="class" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CharterSh__Descr__3A81B327">
+          <End Role="Description" Type="Self.Description" Multiplicity="1" />
+          <End Role="CharterSheet" Type="Self.CharterSheet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Description">
+              <PropertyRef Name="DescriptionID" />
+            </Principal>
+            <Dependent Role="CharterSheet">
+              <PropertyRef Name="Description" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CharterShe__Race__3B75D760">
+          <End Role="Race" Type="Self.Race" Multiplicity="1" />
+          <End Role="CharterSheet" Type="Self.CharterSheet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Race">
+              <PropertyRef Name="RaceID" />
+            </Principal>
+            <Dependent Role="CharterSheet">
+              <PropertyRef Name="Race" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Class__Armor__3C69FB99">
+          <End Role="Armor" Type="Self.Armor" Multiplicity="1" />
+          <End Role="Class" Type="Self.Class" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Armor">
+              <PropertyRef Name="ArmorID" />
+            </Principal>
+            <Dependent Role="Class">
+              <PropertyRef Name="Armor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Class__Weapon1__3D5E1FD2">
+          <End Role="Weapons" Type="Self.Weapons" Multiplicity="1" />
+          <End Role="Class" Type="Self.Class" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Weapons">
+              <PropertyRef Name="WeaponsID" />
+            </Principal>
+            <Dependent Role="Class">
+              <PropertyRef Name="Weapon1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Class__Weapon2__3E52440B">
+          <End Role="Weapons" Type="Self.Weapons" Multiplicity="1" />
+          <End Role="Class" Type="Self.Class" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Weapons">
+              <PropertyRef Name="WeaponsID" />
+            </Principal>
+            <Dependent Role="Class">
+              <PropertyRef Name="Weapon2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Descripti__HairS__3F466844">
+          <End Role="HairStyle" Type="Self.HairStyle" Multiplicity="1" />
+          <End Role="Description" Type="Self.Description" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HairStyle">
+              <PropertyRef Name="HairStyleID" />
+            </Principal>
+            <Dependent Role="Description">
+              <PropertyRef Name="HairStyle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Descripti__SkinT__403A8C7D">
+          <End Role="SkinType" Type="Self.SkinType" Multiplicity="1" />
+          <End Role="Description" Type="Self.Description" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SkinType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="Description">
+              <PropertyRef Name="SkinType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Stat__StatsID__412EB0B6">
+          <End Role="Description" Type="Self.Description" Multiplicity="1" />
+          <End Role="Stat" Type="Self.Stat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Description">
+              <PropertyRef Name="DescriptionID" />
+            </Principal>
+            <Dependent Role="Stat">
+              <PropertyRef Name="StatsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Stat__StatsNum__4222D4EF">
+          <End Role="StatName" Type="Self.StatName" Multiplicity="1" />
+          <End Role="Stat" Type="Self.Stat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatName">
+              <PropertyRef Name="NameID" />
+            </Principal>
+            <Dependent Role="Stat">
+              <PropertyRef Name="StatsNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Weapons__DamageT__4316F928">
+          <End Role="DamageType" Type="Self.DamageType" Multiplicity="1" />
+          <End Role="Weapons" Type="Self.Weapons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DamageType">
+              <PropertyRef Name="DamageTypeID" />
+            </Principal>
+            <Dependent Role="Weapons">
+              <PropertyRef Name="DamageType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DnDModelStoreContainer">
+          <EntitySet Name="Armor" EntityType="Self.Armor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ArmorType" EntityType="Self.ArmorType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharterSheet" EntityType="Self.CharterSheet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Class" EntityType="Self.Class" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DamageType" EntityType="Self.DamageType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Description" EntityType="Self.Description" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HairStyle" EntityType="Self.HairStyle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Race" EntityType="Self.Race" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SkinType" EntityType="Self.SkinType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stat" EntityType="Self.Stat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatName" EntityType="Self.StatName" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Weapons" EntityType="Self.Weapons" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Armor__ArmorType__38996AB5" Association="Self.FK__Armor__ArmorType__38996AB5">
+            <End Role="ArmorType" EntitySet="ArmorType" />
+            <End Role="Armor" EntitySet="Armor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CharterSh__class__398D8EEE" Association="Self.FK__CharterSh__class__398D8EEE">
+            <End Role="Class" EntitySet="Class" />
+            <End Role="CharterSheet" EntitySet="CharterSheet" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CharterSh__Descr__3A81B327" Association="Self.FK__CharterSh__Descr__3A81B327">
+            <End Role="Description" EntitySet="Description" />
+            <End Role="CharterSheet" EntitySet="CharterSheet" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CharterShe__Race__3B75D760" Association="Self.FK__CharterShe__Race__3B75D760">
+            <End Role="Race" EntitySet="Race" />
+            <End Role="CharterSheet" EntitySet="CharterSheet" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Class__Armor__3C69FB99" Association="Self.FK__Class__Armor__3C69FB99">
+            <End Role="Armor" EntitySet="Armor" />
+            <End Role="Class" EntitySet="Class" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Class__Weapon1__3D5E1FD2" Association="Self.FK__Class__Weapon1__3D5E1FD2">
+            <End Role="Weapons" EntitySet="Weapons" />
+            <End Role="Class" EntitySet="Class" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Class__Weapon2__3E52440B" Association="Self.FK__Class__Weapon2__3E52440B">
+            <End Role="Weapons" EntitySet="Weapons" />
+            <End Role="Class" EntitySet="Class" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Descripti__HairS__3F466844" Association="Self.FK__Descripti__HairS__3F466844">
+            <End Role="HairStyle" EntitySet="HairStyle" />
+            <End Role="Description" EntitySet="Description" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Descripti__SkinT__403A8C7D" Association="Self.FK__Descripti__SkinT__403A8C7D">
+            <End Role="SkinType" EntitySet="SkinType" />
+            <End Role="Description" EntitySet="Description" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Stat__StatsID__412EB0B6" Association="Self.FK__Stat__StatsID__412EB0B6">
+            <End Role="Description" EntitySet="Description" />
+            <End Role="Stat" EntitySet="Stat" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Stat__StatsNum__4222D4EF" Association="Self.FK__Stat__StatsNum__4222D4EF">
+            <End Role="StatName" EntitySet="StatName" />
+            <End Role="Stat" EntitySet="Stat" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Weapons__DamageT__4316F928" Association="Self.FK__Weapons__DamageT__4316F928">
+            <End Role="DamageType" EntitySet="DamageType" />
+            <End Role="Weapons" EntitySet="Weapons" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DnDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Armor">
+          <Key>
+            <PropertyRef Name="ArmorID" />
+          </Key>
+          <Property Name="ArmorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ArmorType" Type="Int32" Nullable="false" />
+          <Property Name="ArmorName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ArmorType1" Relationship="Self.FK__Armor__ArmorType__38996AB5" FromRole="Armor" ToRole="ArmorType" />
+          <NavigationProperty Name="Classes" Relationship="Self.FK__Class__Armor__3C69FB99" FromRole="Armor" ToRole="Class" />
+        </EntityType>
+        <EntityType Name="ArmorType">
+          <Key>
+            <PropertyRef Name="ArmorTypeID" />
+          </Key>
+          <Property Name="ArmorTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ArmorType1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Armors" Relationship="Self.FK__Armor__ArmorType__38996AB5" FromRole="ArmorType" ToRole="Armor" />
+        </EntityType>
+        <EntityType Name="CharterSheet">
+          <Key>
+            <PropertyRef Name="SheetID" />
+          </Key>
+          <Property Name="SheetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CharterName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Race" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="Int32" Nullable="false" />
+          <Property Name="class" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Class1" Relationship="Self.FK__CharterSh__class__398D8EEE" FromRole="CharterSheet" ToRole="Class" />
+          <NavigationProperty Name="Description1" Relationship="Self.FK__CharterSh__Descr__3A81B327" FromRole="CharterSheet" ToRole="Description" />
+          <NavigationProperty Name="Race1" Relationship="Self.FK__CharterShe__Race__3B75D760" FromRole="CharterSheet" ToRole="Race" />
+        </EntityType>
+        <EntityType Name="Class">
+          <Key>
+            <PropertyRef Name="ClassID" />
+          </Key>
+          <Property Name="ClassID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClassName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Armor" Type="Int32" Nullable="false" />
+          <Property Name="Weapon1" Type="Int32" Nullable="false" />
+          <Property Name="Weapon2" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Armor1" Relationship="Self.FK__Class__Armor__3C69FB99" FromRole="Class" ToRole="Armor" />
+          <NavigationProperty Name="CharterSheets" Relationship="Self.FK__CharterSh__class__398D8EEE" FromRole="Class" ToRole="CharterSheet" />
+          <NavigationProperty Name="Weapon" Relationship="Self.FK__Class__Weapon1__3D5E1FD2" FromRole="Class" ToRole="Weapons" />
+          <NavigationProperty Name="Weapon3" Relationship="Self.FK__Class__Weapon2__3E52440B" FromRole="Class" ToRole="Weapons" />
+        </EntityType>
+        <EntityType Name="DamageType">
+          <Key>
+            <PropertyRef Name="DamageTypeID" />
+          </Key>
+          <Property Name="DamageTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeOfDamage" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Weapons" Relationship="Self.FK__Weapons__DamageT__4316F928" FromRole="DamageType" ToRole="Weapons" />
+        </EntityType>
+        <EntityType Name="Description">
+          <Key>
+            <PropertyRef Name="DescriptionID" />
+          </Key>
+          <Property Name="DescriptionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HairStyle" Type="Int32" Nullable="false" />
+          <Property Name="HairColor" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="EyeColor" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SkinType" Type="Int32" Nullable="false" />
+          <Property Name="SkinColor" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CharterSheets" Relationship="Self.FK__CharterSh__Descr__3A81B327" FromRole="Description" ToRole="CharterSheet" />
+          <NavigationProperty Name="HairStyle1" Relationship="Self.FK__Descripti__HairS__3F466844" FromRole="Description" ToRole="HairStyle" />
+          <NavigationProperty Name="SkinType1" Relationship="Self.FK__Descripti__SkinT__403A8C7D" FromRole="Description" ToRole="SkinType" />
+          <NavigationProperty Name="Stats" Relationship="Self.FK__Stat__StatsID__412EB0B6" FromRole="Description" ToRole="Stat" />
+        </EntityType>
+        <EntityType Name="HairStyle">
+          <Key>
+            <PropertyRef Name="HairStyleID" />
+          </Key>
+          <Property Name="HairStyleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HairStyle1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Descriptions" Relationship="Self.FK__Descripti__HairS__3F466844" FromRole="HairStyle" ToRole="Description" />
+        </EntityType>
+        <EntityType Name="Race">
+          <Key>
+            <PropertyRef Name="RaceID" />
+          </Key>
+          <Property Name="RaceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RaceName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CharterSheets" Relationship="Self.FK__CharterShe__Race__3B75D760" FromRole="Race" ToRole="CharterSheet" />
+        </EntityType>
+        <EntityType Name="SkinType">
+          <Key>
+            <PropertyRef Name="TypeID" />
+          </Key>
+          <Property Name="TypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SkinType1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Descriptions" Relationship="Self.FK__Descripti__SkinT__403A8C7D" FromRole="SkinType" ToRole="Description" />
+        </EntityType>
+        <EntityType Name="Stat">
+          <Key>
+            <PropertyRef Name="StatsID" />
+            <PropertyRef Name="StatsNum" />
+          </Key>
+          <Property Name="StatsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StatsNum" Type="Int32" Nullable="false" />
+          <Property Name="RacialBonus" Type="Decimal" Precision="3" Scale="1" />
+          <Property Name="BaseScore" Type="Decimal" Precision="3" Scale="1" Nullable="false" />
+          <Property Name="Modifier" Type="Decimal" Precision="3" Scale="1" />
+          <NavigationProperty Name="Description" Relationship="Self.FK__Stat__StatsID__412EB0B6" FromRole="Stat" ToRole="Description" />
+          <NavigationProperty Name="StatName" Relationship="Self.FK__Stat__StatsNum__4222D4EF" FromRole="Stat" ToRole="StatName" />
+        </EntityType>
+        <EntityType Name="StatName">
+          <Key>
+            <PropertyRef Name="NameID" />
+          </Key>
+          <Property Name="NameID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StatName1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Stats" Relationship="Self.FK__Stat__StatsNum__4222D4EF" FromRole="StatName" ToRole="Stat" />
+        </EntityType>
+        <EntityType Name="Weapon">
+          <Key>
+            <PropertyRef Name="WeaponsID" />
+          </Key>
+          <Property Name="WeaponsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DamageType" Type="Int32" Nullable="false" />
+          <Property Name="WeaponName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Classes" Relationship="Self.FK__Class__Weapon1__3D5E1FD2" FromRole="Weapons" ToRole="Class" />
+          <NavigationProperty Name="Classes1" Relationship="Self.FK__Class__Weapon2__3E52440B" FromRole="Weapons" ToRole="Class" />
+          <NavigationProperty Name="DamageType1" Relationship="Self.FK__Weapons__DamageT__4316F928" FromRole="Weapons" ToRole="DamageType" />
+        </EntityType>
+        <Association Name="FK__Armor__ArmorType__38996AB5">
+          <End Role="ArmorType" Type="Self.ArmorType" Multiplicity="1" />
+          <End Role="Armor" Type="Self.Armor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ArmorType">
+              <PropertyRef Name="ArmorTypeID" />
+            </Principal>
+            <Dependent Role="Armor">
+              <PropertyRef Name="ArmorType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Class__Armor__3C69FB99">
+          <End Role="Armor" Type="Self.Armor" Multiplicity="1" />
+          <End Role="Class" Type="Self.Class" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Armor">
+              <PropertyRef Name="ArmorID" />
+            </Principal>
+            <Dependent Role="Class">
+              <PropertyRef Name="Armor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CharterSh__class__398D8EEE">
+          <End Role="Class" Type="Self.Class" Multiplicity="1" />
+          <End Role="CharterSheet" Type="Self.CharterSheet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassID" />
+            </Principal>
+            <Dependent Role="CharterSheet">
+              <PropertyRef Name="class" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CharterSh__Descr__3A81B327">
+          <End Role="Description" Type="Self.Description" Multiplicity="1" />
+          <End Role="CharterSheet" Type="Self.CharterSheet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Description">
+              <PropertyRef Name="DescriptionID" />
+            </Principal>
+            <Dependent Role="CharterSheet">
+              <PropertyRef Name="Description" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CharterShe__Race__3B75D760">
+          <End Role="Race" Type="Self.Race" Multiplicity="1" />
+          <End Role="CharterSheet" Type="Self.CharterSheet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Race">
+              <PropertyRef Name="RaceID" />
+            </Principal>
+            <Dependent Role="CharterSheet">
+              <PropertyRef Name="Race" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Class__Weapon1__3D5E1FD2">
+          <End Role="Weapons" Type="Self.Weapon" Multiplicity="1" />
+          <End Role="Class" Type="Self.Class" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Weapons">
+              <PropertyRef Name="WeaponsID" />
+            </Principal>
+            <Dependent Role="Class">
+              <PropertyRef Name="Weapon1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Class__Weapon2__3E52440B">
+          <End Role="Weapons" Type="Self.Weapon" Multiplicity="1" />
+          <End Role="Class" Type="Self.Class" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Weapons">
+              <PropertyRef Name="WeaponsID" />
+            </Principal>
+            <Dependent Role="Class">
+              <PropertyRef Name="Weapon2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Weapons__DamageT__4316F928">
+          <End Role="DamageType" Type="Self.DamageType" Multiplicity="1" />
+          <End Role="Weapons" Type="Self.Weapon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DamageType">
+              <PropertyRef Name="DamageTypeID" />
+            </Principal>
+            <Dependent Role="Weapons">
+              <PropertyRef Name="DamageType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Descripti__HairS__3F466844">
+          <End Role="HairStyle" Type="Self.HairStyle" Multiplicity="1" />
+          <End Role="Description" Type="Self.Description" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HairStyle">
+              <PropertyRef Name="HairStyleID" />
+            </Principal>
+            <Dependent Role="Description">
+              <PropertyRef Name="HairStyle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Descripti__SkinT__403A8C7D">
+          <End Role="SkinType" Type="Self.SkinType" Multiplicity="1" />
+          <End Role="Description" Type="Self.Description" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SkinType">
+              <PropertyRef Name="TypeID" />
+            </Principal>
+            <Dependent Role="Description">
+              <PropertyRef Name="SkinType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Stat__StatsID__412EB0B6">
+          <End Role="Description" Type="Self.Description" Multiplicity="1" />
+          <End Role="Stat" Type="Self.Stat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Description">
+              <PropertyRef Name="DescriptionID" />
+            </Principal>
+            <Dependent Role="Stat">
+              <PropertyRef Name="StatsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Stat__StatsNum__4222D4EF">
+          <End Role="StatName" Type="Self.StatName" Multiplicity="1" />
+          <End Role="Stat" Type="Self.Stat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatName">
+              <PropertyRef Name="NameID" />
+            </Principal>
+            <Dependent Role="Stat">
+              <PropertyRef Name="StatsNum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DnDEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Armors" EntityType="Self.Armor" />
+          <EntitySet Name="ArmorTypes" EntityType="Self.ArmorType" />
+          <EntitySet Name="CharterSheets" EntityType="Self.CharterSheet" />
+          <EntitySet Name="Classes" EntityType="Self.Class" />
+          <EntitySet Name="DamageTypes" EntityType="Self.DamageType" />
+          <EntitySet Name="Descriptions" EntityType="Self.Description" />
+          <EntitySet Name="HairStyles" EntityType="Self.HairStyle" />
+          <EntitySet Name="Races" EntityType="Self.Race" />
+          <EntitySet Name="SkinTypes" EntityType="Self.SkinType" />
+          <EntitySet Name="Stats" EntityType="Self.Stat" />
+          <EntitySet Name="StatNames" EntityType="Self.StatName" />
+          <EntitySet Name="Weapons" EntityType="Self.Weapon" />
+          <AssociationSet Name="FK__Armor__ArmorType__38996AB5" Association="Self.FK__Armor__ArmorType__38996AB5">
+            <End Role="ArmorType" EntitySet="ArmorTypes" />
+            <End Role="Armor" EntitySet="Armors" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Class__Armor__3C69FB99" Association="Self.FK__Class__Armor__3C69FB99">
+            <End Role="Armor" EntitySet="Armors" />
+            <End Role="Class" EntitySet="Classes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CharterSh__class__398D8EEE" Association="Self.FK__CharterSh__class__398D8EEE">
+            <End Role="Class" EntitySet="Classes" />
+            <End Role="CharterSheet" EntitySet="CharterSheets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CharterSh__Descr__3A81B327" Association="Self.FK__CharterSh__Descr__3A81B327">
+            <End Role="Description" EntitySet="Descriptions" />
+            <End Role="CharterSheet" EntitySet="CharterSheets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CharterShe__Race__3B75D760" Association="Self.FK__CharterShe__Race__3B75D760">
+            <End Role="Race" EntitySet="Races" />
+            <End Role="CharterSheet" EntitySet="CharterSheets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Class__Weapon1__3D5E1FD2" Association="Self.FK__Class__Weapon1__3D5E1FD2">
+            <End Role="Weapons" EntitySet="Weapons" />
+            <End Role="Class" EntitySet="Classes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Class__Weapon2__3E52440B" Association="Self.FK__Class__Weapon2__3E52440B">
+            <End Role="Weapons" EntitySet="Weapons" />
+            <End Role="Class" EntitySet="Classes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Weapons__DamageT__4316F928" Association="Self.FK__Weapons__DamageT__4316F928">
+            <End Role="DamageType" EntitySet="DamageTypes" />
+            <End Role="Weapons" EntitySet="Weapons" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Descripti__HairS__3F466844" Association="Self.FK__Descripti__HairS__3F466844">
+            <End Role="HairStyle" EntitySet="HairStyles" />
+            <End Role="Description" EntitySet="Descriptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Descripti__SkinT__403A8C7D" Association="Self.FK__Descripti__SkinT__403A8C7D">
+            <End Role="SkinType" EntitySet="SkinTypes" />
+            <End Role="Description" EntitySet="Descriptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Stat__StatsID__412EB0B6" Association="Self.FK__Stat__StatsID__412EB0B6">
+            <End Role="Description" EntitySet="Descriptions" />
+            <End Role="Stat" EntitySet="Stats" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Stat__StatsNum__4222D4EF" Association="Self.FK__Stat__StatsNum__4222D4EF">
+            <End Role="StatName" EntitySet="StatNames" />
+            <End Role="Stat" EntitySet="Stats" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DnDModelStoreContainer" CdmEntityContainer="DnDEntities">
+          <EntitySetMapping Name="Armors">
+            <EntityTypeMapping TypeName="DnDModel.Armor">
+              <MappingFragment StoreEntitySet="Armor">
+                <ScalarProperty Name="ArmorID" ColumnName="ArmorID" />
+                <ScalarProperty Name="ArmorType" ColumnName="ArmorType" />
+                <ScalarProperty Name="ArmorName" ColumnName="ArmorName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ArmorTypes">
+            <EntityTypeMapping TypeName="DnDModel.ArmorType">
+              <MappingFragment StoreEntitySet="ArmorType">
+                <ScalarProperty Name="ArmorTypeID" ColumnName="ArmorTypeID" />
+                <ScalarProperty Name="ArmorType1" ColumnName="ArmorType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CharterSheets">
+            <EntityTypeMapping TypeName="DnDModel.CharterSheet">
+              <MappingFragment StoreEntitySet="CharterSheet">
+                <ScalarProperty Name="SheetID" ColumnName="SheetID" />
+                <ScalarProperty Name="CharterName" ColumnName="CharterName" />
+                <ScalarProperty Name="Race" ColumnName="Race" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="class" ColumnName="class" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Classes">
+            <EntityTypeMapping TypeName="DnDModel.Class">
+              <MappingFragment StoreEntitySet="Class">
+                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+                <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+                <ScalarProperty Name="Armor" ColumnName="Armor" />
+                <ScalarProperty Name="Weapon1" ColumnName="Weapon1" />
+                <ScalarProperty Name="Weapon2" ColumnName="Weapon2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DamageTypes">
+            <EntityTypeMapping TypeName="DnDModel.DamageType">
+              <MappingFragment StoreEntitySet="DamageType">
+                <ScalarProperty Name="DamageTypeID" ColumnName="DamageTypeID" />
+                <ScalarProperty Name="TypeOfDamage" ColumnName="TypeOfDamage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Descriptions">
+            <EntityTypeMapping TypeName="DnDModel.Description">
+              <MappingFragment StoreEntitySet="Description">
+                <ScalarProperty Name="DescriptionID" ColumnName="DescriptionID" />
+                <ScalarProperty Name="HairStyle" ColumnName="HairStyle" />
+                <ScalarProperty Name="HairColor" ColumnName="HairColor" />
+                <ScalarProperty Name="EyeColor" ColumnName="EyeColor" />
+                <ScalarProperty Name="SkinType" ColumnName="SkinType" />
+                <ScalarProperty Name="SkinColor" ColumnName="SkinColor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HairStyles">
+            <EntityTypeMapping TypeName="DnDModel.HairStyle">
+              <MappingFragment StoreEntitySet="HairStyle">
+                <ScalarProperty Name="HairStyleID" ColumnName="HairStyleID" />
+                <ScalarProperty Name="HairStyle1" ColumnName="HairStyle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Races">
+            <EntityTypeMapping TypeName="DnDModel.Race">
+              <MappingFragment StoreEntitySet="Race">
+                <ScalarProperty Name="RaceID" ColumnName="RaceID" />
+                <ScalarProperty Name="RaceName" ColumnName="RaceName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SkinTypes">
+            <EntityTypeMapping TypeName="DnDModel.SkinType">
+              <MappingFragment StoreEntitySet="SkinType">
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="SkinType1" ColumnName="SkinType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stats">
+            <EntityTypeMapping TypeName="DnDModel.Stat">
+              <MappingFragment StoreEntitySet="Stat">
+                <ScalarProperty Name="StatsID" ColumnName="StatsID" />
+                <ScalarProperty Name="StatsNum" ColumnName="StatsNum" />
+                <ScalarProperty Name="RacialBonus" ColumnName="RacialBonus" />
+                <ScalarProperty Name="BaseScore" ColumnName="BaseScore" />
+                <ScalarProperty Name="Modifier" ColumnName="Modifier" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatNames">
+            <EntityTypeMapping TypeName="DnDModel.StatName">
+              <MappingFragment StoreEntitySet="StatName">
+                <ScalarProperty Name="NameID" ColumnName="NameID" />
+                <ScalarProperty Name="StatName1" ColumnName="StatName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Weapons">
+            <EntityTypeMapping TypeName="DnDModel.Weapon">
+              <MappingFragment StoreEntitySet="Weapons">
+                <ScalarProperty Name="WeaponsID" ColumnName="WeaponsID" />
+                <ScalarProperty Name="DamageType" ColumnName="DamageType" />
+                <ScalarProperty Name="WeaponName" ColumnName="WeaponName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
