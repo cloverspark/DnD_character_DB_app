@@ -47,6 +47,7 @@ namespace DNDCharaterDBApp
             this.AddBtn.TabIndex = 5;
             this.AddBtn.Text = "Add New";
             this.AddBtn.UseVisualStyleBackColor = true;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // label1
             // 
@@ -74,6 +75,7 @@ namespace DNDCharaterDBApp
             this.CurrentBtn.TabIndex = 0;
             this.CurrentBtn.Text = "Current Charaters";
             this.CurrentBtn.UseVisualStyleBackColor = true;
+            this.CurrentBtn.Click += new System.EventHandler(this.CurrentBtn_Click);
             // 
             // UpdateBtn
             // 
@@ -83,6 +85,7 @@ namespace DNDCharaterDBApp
             this.UpdateBtn.TabIndex = 3;
             this.UpdateBtn.Text = "Update";
             this.UpdateBtn.UseVisualStyleBackColor = true;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
             // label3
             // 
@@ -110,6 +113,7 @@ namespace DNDCharaterDBApp
             this.DeleteBtn.TabIndex = 7;
             this.DeleteBtn.Text = "Delete Sheet";
             this.DeleteBtn.UseVisualStyleBackColor = true;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // homeForm
             // 
