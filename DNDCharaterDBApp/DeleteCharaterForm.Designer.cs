@@ -1,7 +1,7 @@
 ﻿
 namespace DNDCharaterDBApp
 {
-    partial class CurrentCharaters
+    partial class DeleteCharaterForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,17 @@ namespace DNDCharaterDBApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // DeleteCharaterForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "CurrentCharaters";
+            this.Name = "DeleteCharaterForm";
+            this.Text = "DeleteCharater";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

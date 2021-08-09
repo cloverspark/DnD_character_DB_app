@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DNDCharaterDBApp
 {
-    public partial class AddCharater : Form
+    public partial class AddCharaterForm : Form
     {
-        public AddCharater()
+        public AddCharaterForm()
         {
             InitializeComponent();
         }
