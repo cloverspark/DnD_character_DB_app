@@ -56,27 +56,27 @@
     <Compile Include="ArmorType.cs" />
     <Compile Include="CharterSheet.cs" />
     <Compile Include="Class.cs" />
-    <Compile Include="CurrentCharaters.cs">
+    <Compile Include="CurrentCharatersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CurrentCharaters.Designer.cs">
-      <DependentUpon>CurrentCharaters.cs</DependentUpon>
+    <Compile Include="CurrentCharatersForm.Designer.cs">
+      <DependentUpon>CurrentCharatersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DamageType.cs" />
-    <Compile Include="DeleteCharater.cs">
+    <Compile Include="DeleteCharaterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DeleteCharater.Designer.cs">
-      <DependentUpon>DeleteCharater.cs</DependentUpon>
+    <Compile Include="DeleteCharaterForm.Designer.cs">
+      <DependentUpon>DeleteCharaterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Description.cs" />
     <Compile Include="DnDDatabase.cs" />
     <Compile Include="HairStyle.cs" />
-    <Compile Include="Home.cs">
+    <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Home.Designer.cs">
-      <DependentUpon>Home.cs</DependentUpon>
+    <Compile Include="HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model1.Context.cs" />
     <Compile Include="Model1.cs" />
@@ -89,15 +89,24 @@
     <Compile Include="SkinType.cs" />
     <Compile Include="Stat.cs" />
     <Compile Include="StatName.cs" />
-    <Compile Include="UpdateCharater.cs">
+    <Compile Include="UpdateCharaterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateCharater.Designer.cs">
-      <DependentUpon>UpdateCharater.cs</DependentUpon>
+    <Compile Include="UpdateCharaterForm.Designer.cs">
+      <DependentUpon>UpdateCharaterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Weapon.cs" />
-    <EmbeddedResource Include="Home.resx">
-      <DependentUpon>Home.cs</DependentUpon>
+    <EmbeddedResource Include="AddCharater.resx">
+      <DependentUpon>AddCharater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CurrentCharatersForm.resx">
+      <DependentUpon>CurrentCharatersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteCharaterForm.resx">
+      <DependentUpon>DeleteCharaterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -108,6 +117,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UpdateCharaterForm.resx">
+      <DependentUpon>UpdateCharaterForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
