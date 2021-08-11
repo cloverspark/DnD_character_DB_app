@@ -40,5 +40,10 @@ namespace DNDCharaterDBApp
             AddCharaterForm ACF = new AddCharaterForm();
             ACF.ShowDialog();
         }
+
+        private void homeForm_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

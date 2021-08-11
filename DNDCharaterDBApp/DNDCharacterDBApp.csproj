@@ -68,6 +68,7 @@
     </Compile>
     <Compile Include="DamageType.cs" />
     <Compile Include="DamageTypeDatabase.cs" />
+    <Compile Include="DbHelper.cs" />
     <Compile Include="DeleteCharacterForm.cs">
       <SubType>Form</SubType>
     </Compile>
