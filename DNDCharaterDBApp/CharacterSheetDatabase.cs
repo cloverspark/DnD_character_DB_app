@@ -9,14 +9,14 @@ namespace DNDCharaterDBApp
 {
     class CharacterSheetDatabase
     {
-        /*public static DataTable GetAllSheets()
+        public static DataTable GetAllSheets()
         {
             SqlConnection con = DbHelper.GetConnection();
 
-            SqlDataAdapter da = new SqlDataAdapter("select SheetID, CharterName, RaceName from CharterSheet , Racewhere CharterSheet.race = Race.RaceID", con);
+            SqlDataAdapter da = new SqlDataAdapter("select SheetID, CharterName, RaceName from CharterSheet , Race where CharterSheet.race = Race.RaceID", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
-        }*/
+        }
     }
 }

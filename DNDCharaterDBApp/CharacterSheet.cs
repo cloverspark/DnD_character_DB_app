@@ -17,6 +17,7 @@ namespace DNDCharaterDBApp
         public int SheetID { get; set; }
         public string CharterName { get; set; }
         public int Race { get; set; }
+        public string Racename { get; set; }
         public int Description { get; set; }
         public int @class { get; set; }
     
