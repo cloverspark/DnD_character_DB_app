@@ -24,5 +24,10 @@ namespace DNDCharaterDBApp
         public virtual Class Class1 { get; set; }
         public virtual Description Description1 { get; set; }
         public virtual Race Race1 { get; set; }
+
+        public string ToString()
+        {
+            return SheetID + "";
+        }
     }
 }

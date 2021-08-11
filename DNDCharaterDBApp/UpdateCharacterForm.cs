@@ -16,5 +16,12 @@ namespace DNDCharaterDBApp
         {
             InitializeComponent();
         }
+
+        private void UpdateCharacterForm_Load(object sender, EventArgs e)
+        {
+            DataTable characters = CharacterSheetDatabase.GetAllSheets();
+
+            CharacterListBx.Items.Add(characters.Rows.ToString());
+        }
     }
 }

@@ -134,6 +134,7 @@ namespace DNDCharaterDBApp
             this.Controls.Add(this.AddBtn);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "homeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.Load += new System.EventHandler(this.homeForm_Load);
             this.ResumeLayout(false);
