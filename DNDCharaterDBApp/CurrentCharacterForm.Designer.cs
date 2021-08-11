@@ -35,19 +35,22 @@ namespace DNDCharaterDBApp
             // CharacterSheetCB
             // 
             this.CharacterSheetCB.FormattingEnabled = true;
-            this.CharacterSheetCB.Location = new System.Drawing.Point(48, 103);
+            this.CharacterSheetCB.Location = new System.Drawing.Point(43, 82);
+            this.CharacterSheetCB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CharacterSheetCB.Name = "CharacterSheetCB";
-            this.CharacterSheetCB.Size = new System.Drawing.Size(263, 28);
+            this.CharacterSheetCB.Size = new System.Drawing.Size(234, 24);
             this.CharacterSheetCB.TabIndex = 0;
             this.CharacterSheetCB.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // CurrentCharacterForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 236);
+            this.ClientSize = new System.Drawing.Size(340, 189);
             this.Controls.Add(this.CharacterSheetCB);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CurrentCharacterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CurrentCharaters";
             this.Load += new System.EventHandler(this.CurrentCharacterForm_Load);
             this.ResumeLayout(false);
