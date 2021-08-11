@@ -9,7 +9,7 @@ namespace DNDCharaterDBApp
 {
     class CharacterSheetDatabase
     {
-        public static DataTable GetAllSheets()
+        /*public static DataTable GetAllSheets()
         {
             SqlConnection con = DbHelper.GetConnection();
 
@@ -17,6 +17,6 @@ namespace DNDCharaterDBApp
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
-        }
+        }*/
     }
 }
