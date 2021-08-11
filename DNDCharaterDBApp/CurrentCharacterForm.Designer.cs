@@ -1,7 +1,7 @@
 ﻿
 namespace DNDCharaterDBApp
 {
-    partial class CurrentCharatersForm
+    partial class CurrentCharacterForm
     {
         /// <summary>
         /// Required designer variable.

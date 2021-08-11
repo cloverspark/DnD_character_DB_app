@@ -35,7 +35,7 @@ namespace DNDCharaterDBApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1380, 1009);
             this.Name = "AddCharaterForm";
             this.Text = "AddCharater";
             this.ResumeLayout(false);
