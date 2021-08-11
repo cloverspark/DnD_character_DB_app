@@ -54,20 +54,20 @@
     </Compile>
     <Compile Include="Armor.cs" />
     <Compile Include="ArmorType.cs" />
-    <Compile Include="CharterSheet.cs" />
+    <Compile Include="CharacterSheet.cs" />
     <Compile Include="Class.cs" />
-    <Compile Include="CurrentCharatersForm.cs">
+    <Compile Include="CurrentCharacterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CurrentCharatersForm.Designer.cs">
-      <DependentUpon>CurrentCharatersForm.cs</DependentUpon>
+    <Compile Include="CurrentCharacterForm.Designer.cs">
+      <DependentUpon>CurrentCharacterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DamageType.cs" />
-    <Compile Include="DeleteCharaterForm.cs">
+    <Compile Include="DeleteCharacterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DeleteCharaterForm.Designer.cs">
-      <DependentUpon>DeleteCharaterForm.cs</DependentUpon>
+    <Compile Include="DeleteCharacterForm.Designer.cs">
+      <DependentUpon>DeleteCharacterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Description.cs" />
     <Compile Include="DnDDatabase.cs" />
@@ -89,21 +89,21 @@
     <Compile Include="SkinType.cs" />
     <Compile Include="Stat.cs" />
     <Compile Include="StatName.cs" />
-    <Compile Include="UpdateCharaterForm.cs">
+    <Compile Include="UpdateCharacterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateCharaterForm.Designer.cs">
-      <DependentUpon>UpdateCharaterForm.cs</DependentUpon>
+    <Compile Include="UpdateCharacterForm.Designer.cs">
+      <DependentUpon>UpdateCharacterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Weapon.cs" />
     <EmbeddedResource Include="AddCharater.resx">
       <DependentUpon>AddCharater.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CurrentCharatersForm.resx">
-      <DependentUpon>CurrentCharatersForm.cs</DependentUpon>
+    <EmbeddedResource Include="CurrentCharacterForm.resx">
+      <DependentUpon>CurrentCharacterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DeleteCharaterForm.resx">
-      <DependentUpon>DeleteCharaterForm.cs</DependentUpon>
+    <EmbeddedResource Include="DeleteCharacterForm.resx">
+      <DependentUpon>DeleteCharacterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
@@ -117,8 +117,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UpdateCharaterForm.resx">
-      <DependentUpon>UpdateCharaterForm.cs</DependentUpon>
+    <EmbeddedResource Include="UpdateCharacterForm.resx">
+      <DependentUpon>UpdateCharacterForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

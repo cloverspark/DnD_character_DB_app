@@ -54,9 +54,9 @@ namespace DNDCharaterDBApp
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(41, 302);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 20);
+            this.label1.Size = new System.Drawing.Size(192, 20);
             this.label1.TabIndex = 4;
-            this.label1.Text = "click to add new charater";
+            this.label1.Text = "click to add new character";
             // 
             // label2
             // 
@@ -65,7 +65,7 @@ namespace DNDCharaterDBApp
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(216, 20);
             this.label2.TabIndex = 1;
-            this.label2.Text = "click to view current charaters";
+            this.label2.Text = "click to view current character";
             // 
             // CurrentBtn
             // 
@@ -73,7 +73,7 @@ namespace DNDCharaterDBApp
             this.CurrentBtn.Name = "CurrentBtn";
             this.CurrentBtn.Size = new System.Drawing.Size(121, 69);
             this.CurrentBtn.TabIndex = 0;
-            this.CurrentBtn.Text = "Current Charaters";
+            this.CurrentBtn.Text = "Current Characters";
             this.CurrentBtn.UseVisualStyleBackColor = true;
             this.CurrentBtn.Click += new System.EventHandler(this.CurrentBtn_Click);
             // 
@@ -92,18 +92,18 @@ namespace DNDCharaterDBApp
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(306, 42);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(246, 20);
+            this.label3.Size = new System.Drawing.Size(254, 20);
             this.label3.TabIndex = 2;
-            this.label3.Text = "click to update a finished charater";
+            this.label3.Text = "click to update a finished character";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(306, 302);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(181, 20);
+            this.label4.Size = new System.Drawing.Size(189, 20);
             this.label4.TabIndex = 6;
-            this.label4.Text = "click to delete a charater";
+            this.label4.Text = "click to delete a character";
             // 
             // DeleteBtn
             // 

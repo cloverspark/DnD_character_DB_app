@@ -19,19 +19,19 @@ namespace DNDCharaterDBApp
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
-            UpdateCharaterForm UCF = new UpdateCharaterForm();
+            UpdateCharacterForm UCF = new UpdateCharacterForm();
             UCF.ShowDialog();
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
-            DeleteCharaterForm DCF = new DeleteCharaterForm();
+            DeleteCharacterForm DCF = new DeleteCharacterForm();
             DCF.ShowDialog();
         }
 
         private void CurrentBtn_Click(object sender, EventArgs e)
         {
-            CurrentCharatersForm DCF = new CurrentCharatersForm();
+            CurrentCharacterForm DCF = new CurrentCharacterForm();
             DCF.ShowDialog();
         }
 
