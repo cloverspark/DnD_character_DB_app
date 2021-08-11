@@ -53,9 +53,13 @@
       <DependentUpon>AddCharater.cs</DependentUpon>
     </Compile>
     <Compile Include="Armor.cs" />
+    <Compile Include="ArmorDatabase.cs" />
     <Compile Include="ArmorType.cs" />
+    <Compile Include="ArmorTypeDatabase.cs" />
     <Compile Include="CharacterSheet.cs" />
+    <Compile Include="CharacterSheetDatabase.cs" />
     <Compile Include="Class.cs" />
+    <Compile Include="ClassDatabase.cs" />
     <Compile Include="CurrentCharacterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +67,7 @@
       <DependentUpon>CurrentCharacterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DamageType.cs" />
+    <Compile Include="DamageTypeDatabase.cs" />
     <Compile Include="DeleteCharacterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,8 +75,9 @@
       <DependentUpon>DeleteCharacterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Description.cs" />
-    <Compile Include="DnDDatabase.cs" />
+    <Compile Include="DescriptionDatabase.cs" />
     <Compile Include="HairStyle.cs" />
+    <Compile Include="HairStyleDatabase.cs" />
     <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,9 +92,13 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Race.cs" />
+    <Compile Include="RaceDatabase.cs" />
     <Compile Include="SkinType.cs" />
+    <Compile Include="SkinTypeDatabase.cs" />
     <Compile Include="Stat.cs" />
+    <Compile Include="StatDatabase.cs" />
     <Compile Include="StatName.cs" />
+    <Compile Include="StatNameDatabase.cs" />
     <Compile Include="UpdateCharacterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +106,7 @@
       <DependentUpon>UpdateCharacterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Weapon.cs" />
+    <Compile Include="WeaponDatabase.cs" />
     <EmbeddedResource Include="AddCharater.resx">
       <DependentUpon>AddCharater.cs</DependentUpon>
     </EmbeddedResource>
