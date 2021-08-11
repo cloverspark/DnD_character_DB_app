@@ -30,7 +30,6 @@ namespace DNDCharaterDBApp
         private void InitializeComponent()
         {
             this.CharacterSheetCB = new System.Windows.Forms.ComboBox();
-            this.RaceNameTB = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // CharacterSheetCB
@@ -42,31 +41,21 @@ namespace DNDCharaterDBApp
             this.CharacterSheetCB.TabIndex = 0;
             this.CharacterSheetCB.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // RaceNameTB
-            // 
-            this.RaceNameTB.Location = new System.Drawing.Point(472, 105);
-            this.RaceNameTB.Name = "RaceNameTB";
-            this.RaceNameTB.Size = new System.Drawing.Size(181, 26);
-            this.RaceNameTB.TabIndex = 2;
-            // 
             // CurrentCharacterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.RaceNameTB);
+            this.ClientSize = new System.Drawing.Size(382, 236);
             this.Controls.Add(this.CharacterSheetCB);
             this.Name = "CurrentCharacterForm";
             this.Text = "CurrentCharaters";
             this.Load += new System.EventHandler(this.CurrentCharacterForm_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.ComboBox CharacterSheetCB;
-        private System.Windows.Forms.TextBox RaceNameTB;
     }
 }
