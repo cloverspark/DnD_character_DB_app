@@ -29,19 +29,35 @@ namespace DNDCharaterDBApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.CharacterListBx = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // UpdateCharaterForm
+            // CharacterListBx
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.CharacterListBx.FormattingEnabled = true;
+            this.CharacterListBx.ItemHeight = 16;
+            this.CharacterListBx.Location = new System.Drawing.Point(25, 33);
+            this.CharacterListBx.Name = "CharacterListBx";
+            this.CharacterListBx.Size = new System.Drawing.Size(416, 596);
+            this.CharacterListBx.TabIndex = 0;
+            // 
+            // UpdateCharacterForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "UpdateCharaterForm";
+            this.ClientSize = new System.Drawing.Size(1226, 675);
+            this.Controls.Add(this.CharacterListBx);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "UpdateCharacterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UpdateCharater";
+            this.Load += new System.EventHandler(this.UpdateCharacterForm_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox CharacterListBx;
     }
 }

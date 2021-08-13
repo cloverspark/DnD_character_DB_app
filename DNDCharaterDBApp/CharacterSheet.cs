@@ -19,6 +19,5 @@ namespace DNDCharaterDBApp
         public int Description { get; set; }
         public string className { get; set; }
     
-        
-    }
+
 }
