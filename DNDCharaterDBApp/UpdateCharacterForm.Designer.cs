@@ -277,6 +277,7 @@ namespace DNDCharaterDBApp
             this.Name = "UpdateCharacterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UpdateCharater";
+            this.Load += new System.EventHandler(this.UpdateCharacterForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
