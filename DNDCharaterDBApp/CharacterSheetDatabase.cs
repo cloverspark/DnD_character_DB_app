@@ -13,7 +13,7 @@ namespace DNDCharaterDBApp
         {
             SqlConnection con = DbHelper.GetConnection();
 
-            SqlDataAdapter da = new SqlDataAdapter("select SheetID, CharterName, RaceName from CharterSheet , Race where CharterSheet.race = Race.RaceID", con);
+            SqlDataAdapter da = new SqlDataAdapter("select * from CharterSheet ", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;

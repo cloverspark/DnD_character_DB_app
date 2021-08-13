@@ -16,18 +16,8 @@ namespace DNDCharaterDBApp
     {
         public int SheetID { get; set; }
         public string CharterName { get; set; }
-        public int Race { get; set; }
-        public string Racename { get; set; }
         public int Description { get; set; }
-        public int @class { get; set; }
+        public string className { get; set; }
     
-        public virtual Class Class1 { get; set; }
-        public virtual Description Description1 { get; set; }
-        public virtual Race Race1 { get; set; }
 
-        public string ToString()
-        {
-            return SheetID + "";
-        }
-    }
 }
