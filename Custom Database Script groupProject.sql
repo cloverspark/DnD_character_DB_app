@@ -32,6 +32,8 @@ CREATE TABLE CharterSheet(
 	ClassName       varchar(25)        NOT NULL,
 )
 
+/**** this is all tester information ***/
+
 
 /**** Table: [Description] Values ****/
 SET IDENTITY_INSERT [Description] ON 
