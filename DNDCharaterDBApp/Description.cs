@@ -14,25 +14,14 @@ namespace DNDCharaterDBApp
     
     public partial class Description
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Description()
-        {
-            this.CharterSheets = new HashSet<CharterSheet>();
-            this.Stats = new HashSet<Stat>();
-        }
-    
+        
         public int DescriptionID { get; set; }
         public int HairStyle { get; set; }
         public string HairColor { get; set; }
         public string EyeColor { get; set; }
         public int SkinType { get; set; }
         public string SkinColor { get; set; }
+        public string RaceName { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CharterSheet> CharterSheets { get; set; }
-        public virtual HairStyle HairStyle1 { get; set; }
-        public virtual SkinType SkinType1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Stat> Stats { get; set; }
     }
 }
