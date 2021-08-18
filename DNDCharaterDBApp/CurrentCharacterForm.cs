@@ -29,13 +29,13 @@ namespace DNDCharaterDBApp
             CharacterSheetCB.DataSource = dt;
             CharacterSheetCB.DisplayMember = nameof(CharterSheet.CharterName);
             CharacterSheetCB.ValueMember = nameof(CharterSheet.SheetID);
-            CharacterSheetCB.SelectedIndex = -1;
-            
+            CharacterSheetCB.SelectedIndex = -1; 
         }
 
         private void CurrentCharacterForm_Load(object sender, EventArgs e)
         {
             PopulateCurrentCharacterSheets();
+            
         }
     }
 }
