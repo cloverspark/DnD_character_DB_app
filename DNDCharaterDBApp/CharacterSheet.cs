@@ -18,6 +18,7 @@ namespace DNDCharaterDBApp
         public string CharterName { get; set; }
         public int Description { get; set; }
         public string className { get; set; }
+        public string result { get; set; }
 
     }
 }
