@@ -20,8 +20,18 @@ namespace DNDCharaterDBApp
 
         private void UpdateCharacterForm_Load(object sender, EventArgs e)
         {
-            SqlConnection con = DbHelper.GetConnection();
+            // Get all the Character Sheets and their Descriptions to display on int the list box
+            List<CharactorAndDescription> characters = CharacterSheetAndDescriptionDB.GetAllCharacterInfo();
 
+            PopulateCharacterListBx(characters);
+        }
+
+        public void PopulateCharacterListBx(List<CharactorAndDescription> characters)
+        {
+            foreach(CharactorAndDescription cd in characters)
+            {
+                CharacterListBx.Items.Add(cd);
+            }
         }
     }
 }
