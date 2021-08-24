@@ -55,6 +55,7 @@
     <Compile Include="CharacterSheet.cs" />
     <Compile Include="CharacterSheetAndDescriptionDB.cs" />
     <Compile Include="CharacterSheetDatabase.cs" />
+    <Compile Include="CharactorAndDescription.cs" />
     <Compile Include="CurrentCharacterForm.cs">
       <SubType>Form</SubType>
     </Compile>

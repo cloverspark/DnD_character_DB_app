@@ -20,10 +20,18 @@ namespace DNDCharaterDBApp
 
         private void UpdateCharacterForm_Load(object sender, EventArgs e)
         {
-            // Get all the Character Sheets to display on int the list box
-            DataTable characterDt = CharacterSheetDatabase.GetAllSheets();
+            // Get all the Character Sheets and their Descriptions to display on int the list box
+            List<CharactorAndDescription> characters = CharacterSheetAndDescriptionDB.GetAllCharacterInfo();
 
-            // Get all the descriptions for the 
+            PopulateCharacterListBx(characters);
+        }
+
+        public void PopulateCharacterListBx(List<CharactorAndDescription> characters)
+        {
+            foreach(CharactorAndDescription cd in characters)
+            {
+                CharacterListBx.Items.Add(cd);
+            }
         }
     }
 }
