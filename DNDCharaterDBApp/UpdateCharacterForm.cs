@@ -26,9 +26,28 @@ namespace DNDCharaterDBApp
             PopulateCharacterListBx(characters);
         }
 
+        private void CharacterListBx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CharactorAndDescription character = CharacterListBx.SelectedItem as CharactorAndDescription;
+
+            PopulateTxtBxs(character);
+        }
+
+        public void PopulateTxtBxs(CharactorAndDescription character)
+        {
+            CharacterTxtBx.Text = character.CharterName;
+            HairStyleTxtBx.Text = character.HairStyle;
+            ClassTxtBx.Text = character.ClassName;
+            HairColorTxtBx.Text = character.HairColor;
+            EyeColorTxtBx.Text = character.EyeColor;
+            SkinTypeTxtBx.Text = character.SkinType;
+            SkinColorTxtBx.Text = character.SkinColor;
+            RaceNameTxtBx.Text = character.RaceName;
+        }
+
         public void PopulateCharacterListBx(List<CharactorAndDescription> characters)
         {
-            foreach(CharactorAndDescription cd in characters)
+            foreach (CharactorAndDescription cd in characters)
             {
                 CharacterListBx.Items.Add(cd);
             }
