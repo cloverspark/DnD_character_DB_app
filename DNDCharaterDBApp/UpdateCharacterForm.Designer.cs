@@ -33,18 +33,18 @@ namespace DNDCharaterDBApp
             this.DescriptionTxtBx = new System.Windows.Forms.TextBox();
             this.HairStyleTxtBx = new System.Windows.Forms.TextBox();
             this.HairColorTxtBx = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.EyeColorTxtBx = new System.Windows.Forms.TextBox();
             this.SkinTypeTxtBx = new System.Windows.Forms.TextBox();
             this.SkinColorTxtBx = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.RaceNameTxtBx = new System.Windows.Forms.TextBox();
             this.ClassTxtBx = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.EyeColorTxtBx = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.RaceNameTxtBx = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.CharacterTxtBx = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -55,12 +55,14 @@ namespace DNDCharaterDBApp
             // 
             // CharacterListBx
             // 
+            this.CharacterListBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CharacterListBx.FormattingEnabled = true;
-            this.CharacterListBx.ItemHeight = 16;
+            this.CharacterListBx.ItemHeight = 20;
             this.CharacterListBx.Location = new System.Drawing.Point(47, 197);
             this.CharacterListBx.Name = "CharacterListBx";
-            this.CharacterListBx.Size = new System.Drawing.Size(416, 420);
+            this.CharacterListBx.Size = new System.Drawing.Size(431, 524);
             this.CharacterListBx.TabIndex = 0;
+            this.CharacterListBx.SelectedIndexChanged += new System.EventHandler(this.CharacterListBx_SelectedIndexChanged);
             // 
             // DescriptionTxtBx
             // 
@@ -71,52 +73,59 @@ namespace DNDCharaterDBApp
             // 
             // HairStyleTxtBx
             // 
+            this.HairStyleTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HairStyleTxtBx.Location = new System.Drawing.Point(1075, 149);
             this.HairStyleTxtBx.Name = "HairStyleTxtBx";
-            this.HairStyleTxtBx.Size = new System.Drawing.Size(222, 22);
+            this.HairStyleTxtBx.Size = new System.Drawing.Size(222, 24);
             this.HairStyleTxtBx.TabIndex = 2;
             // 
             // HairColorTxtBx
             // 
+            this.HairColorTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HairColorTxtBx.Location = new System.Drawing.Point(1075, 229);
             this.HairColorTxtBx.Name = "HairColorTxtBx";
-            this.HairColorTxtBx.Size = new System.Drawing.Size(222, 22);
+            this.HairColorTxtBx.Size = new System.Drawing.Size(222, 24);
             this.HairColorTxtBx.TabIndex = 4;
             // 
-            // textBox5
+            // EyeColorTxtBx
             // 
-            this.textBox5.Location = new System.Drawing.Point(662, 314);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(222, 22);
-            this.textBox5.TabIndex = 5;
+            this.EyeColorTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EyeColorTxtBx.Location = new System.Drawing.Point(662, 314);
+            this.EyeColorTxtBx.Name = "EyeColorTxtBx";
+            this.EyeColorTxtBx.Size = new System.Drawing.Size(222, 24);
+            this.EyeColorTxtBx.TabIndex = 5;
             // 
             // SkinTypeTxtBx
             // 
+            this.SkinTypeTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SkinTypeTxtBx.Location = new System.Drawing.Point(1075, 317);
             this.SkinTypeTxtBx.Name = "SkinTypeTxtBx";
-            this.SkinTypeTxtBx.Size = new System.Drawing.Size(222, 22);
+            this.SkinTypeTxtBx.Size = new System.Drawing.Size(222, 24);
             this.SkinTypeTxtBx.TabIndex = 6;
             // 
             // SkinColorTxtBx
             // 
+            this.SkinColorTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SkinColorTxtBx.Location = new System.Drawing.Point(662, 392);
             this.SkinColorTxtBx.Name = "SkinColorTxtBx";
-            this.SkinColorTxtBx.Size = new System.Drawing.Size(222, 22);
+            this.SkinColorTxtBx.Size = new System.Drawing.Size(222, 24);
             this.SkinColorTxtBx.TabIndex = 7;
             // 
-            // textBox8
+            // RaceNameTxtBx
             // 
-            this.textBox8.Location = new System.Drawing.Point(1075, 392);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(222, 22);
-            this.textBox8.TabIndex = 8;
+            this.RaceNameTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RaceNameTxtBx.Location = new System.Drawing.Point(1075, 392);
+            this.RaceNameTxtBx.Name = "RaceNameTxtBx";
+            this.RaceNameTxtBx.Size = new System.Drawing.Size(222, 24);
+            this.RaceNameTxtBx.TabIndex = 8;
             // 
             // ClassTxtBx
             // 
             this.ClassTxtBx.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.ClassTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClassTxtBx.Location = new System.Drawing.Point(662, 229);
             this.ClassTxtBx.Name = "ClassTxtBx";
-            this.ClassTxtBx.Size = new System.Drawing.Size(222, 22);
+            this.ClassTxtBx.Size = new System.Drawing.Size(222, 24);
             this.ClassTxtBx.TabIndex = 3;
             // 
             // label1
@@ -149,15 +158,15 @@ namespace DNDCharaterDBApp
             this.label4.TabIndex = 13;
             this.label4.Text = "HairColor:";
             // 
-            // EyeColorTxtBx
+            // label13
             // 
-            this.EyeColorTxtBx.AutoSize = true;
-            this.EyeColorTxtBx.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EyeColorTxtBx.Location = new System.Drawing.Point(503, 318);
-            this.EyeColorTxtBx.Name = "EyeColorTxtBx";
-            this.EyeColorTxtBx.Size = new System.Drawing.Size(86, 18);
-            this.EyeColorTxtBx.TabIndex = 5;
-            this.EyeColorTxtBx.Text = "EyeColor:";
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(503, 318);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(86, 18);
+            this.label13.TabIndex = 5;
+            this.label13.Text = "EyeColor:";
             // 
             // label6
             // 
@@ -179,21 +188,22 @@ namespace DNDCharaterDBApp
             this.label7.TabIndex = 16;
             this.label7.Text = "SkinColor:";
             // 
-            // RaceNameTxtBx
+            // label8
             // 
-            this.RaceNameTxtBx.AutoSize = true;
-            this.RaceNameTxtBx.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RaceNameTxtBx.Location = new System.Drawing.Point(943, 393);
-            this.RaceNameTxtBx.Name = "RaceNameTxtBx";
-            this.RaceNameTxtBx.Size = new System.Drawing.Size(102, 18);
-            this.RaceNameTxtBx.TabIndex = 8;
-            this.RaceNameTxtBx.Text = "RaceName:";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(943, 393);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(102, 18);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "RaceName:";
             // 
             // CharacterTxtBx
             // 
+            this.CharacterTxtBx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CharacterTxtBx.Location = new System.Drawing.Point(662, 149);
             this.CharacterTxtBx.Name = "CharacterTxtBx";
-            this.CharacterTxtBx.Size = new System.Drawing.Size(222, 22);
+            this.CharacterTxtBx.Size = new System.Drawing.Size(222, 24);
             this.CharacterTxtBx.TabIndex = 1;
             // 
             // label9
@@ -239,10 +249,10 @@ namespace DNDCharaterDBApp
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(133, 149);
+            this.label3.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(107, 140);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(228, 25);
+            this.label3.Size = new System.Drawing.Size(322, 34);
             this.label3.TabIndex = 23;
             this.label3.Text = "Choose a Character";
             // 
@@ -250,25 +260,25 @@ namespace DNDCharaterDBApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1361, 712);
+            this.ClientSize = new System.Drawing.Size(1367, 743);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.UpdateBtn);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.CharacterTxtBx);
-            this.Controls.Add(this.RaceNameTxtBx);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.EyeColorTxtBx);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ClassTxtBx);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.RaceNameTxtBx);
             this.Controls.Add(this.SkinColorTxtBx);
             this.Controls.Add(this.SkinTypeTxtBx);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.EyeColorTxtBx);
             this.Controls.Add(this.HairColorTxtBx);
             this.Controls.Add(this.HairStyleTxtBx);
             this.Controls.Add(this.DescriptionTxtBx);
@@ -289,18 +299,18 @@ namespace DNDCharaterDBApp
         private System.Windows.Forms.TextBox DescriptionTxtBx;
         private System.Windows.Forms.TextBox HairStyleTxtBx;
         private System.Windows.Forms.TextBox HairColorTxtBx;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox EyeColorTxtBx;
         private System.Windows.Forms.TextBox SkinTypeTxtBx;
         private System.Windows.Forms.TextBox SkinColorTxtBx;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox RaceNameTxtBx;
         private System.Windows.Forms.TextBox ClassTxtBx;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label EyeColorTxtBx;
+        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label RaceNameTxtBx;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox CharacterTxtBx;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
