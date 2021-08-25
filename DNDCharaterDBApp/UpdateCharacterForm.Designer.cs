@@ -226,6 +226,7 @@ namespace DNDCharaterDBApp
             this.UpdateBtn.TabIndex = 10;
             this.UpdateBtn.Text = "Update";
             this.UpdateBtn.UseVisualStyleBackColor = true;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
             // label3
             // 
