@@ -29,23 +29,65 @@ namespace DNDCharaterDBApp
 
             while (rdr.Read())
             {
-                CharactorAndDescription charactor = new CharactorAndDescription();
+                CharactorAndDescription character = new CharactorAndDescription();
 
-                charactor.CharterName = Convert.ToString(rdr["CharterName"]);
-                charactor.ClassName = Convert.ToString(rdr["className"]);
-                charactor.HairStyle = Convert.ToString(rdr["HairStyle"]);
-                charactor.HairColor = Convert.ToString(rdr["HairColor"]);
-                charactor.EyeColor = Convert.ToString(rdr["EyeColor"]);
-                charactor.SkinType = Convert.ToString(rdr["SkinType"]);
-                charactor.SkinColor = Convert.ToString(rdr["SkinColor"]);
-                charactor.RaceName = Convert.ToString(rdr["RaceName"]);
+                character.SheetID = Convert.ToInt32(rdr["SheetId"]);
+                character.DescriptionID = Convert.ToInt32(rdr["DescriptionID"]);
+                character.CharacterName = Convert.ToString(rdr["CharacterName"]);
+                character.ClassName = Convert.ToString(rdr["className"]);
+                character.HairStyle = Convert.ToString(rdr["HairStyle"]);
+                character.HairColor = Convert.ToString(rdr["HairColor"]);
+                character.EyeColor = Convert.ToString(rdr["EyeColor"]);
+                character.SkinType = Convert.ToString(rdr["SkinType"]);
+                character.SkinColor = Convert.ToString(rdr["SkinColor"]);
+                character.RaceName = Convert.ToString(rdr["RaceName"]);
 
-                characterList.Add(charactor);
+                characterList.Add(character);
             }
 
             con.Close();
 
             return characterList;
+        }
+
+        /// <summary>
+        /// Update the character in the database
+        /// </summary>
+        /// <param name="character"></param>
+        /// <returns>The number of rows affected. Because it is updating 2 tables the 
+        /// total rows affected should be 2</returns>
+        public static int UpdateCharacter(CharactorAndDescription character)
+        {
+
+            SqlConnection con = DbHelper.GetConnection();
+
+            // cmd is the query 
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "UPDATE CharterSheet " +
+                              $"SET CharacterName = '{character.CharacterName}', ClassName = '{character.ClassName}' " +
+                              $"WHERE SheetID = '{character.SheetID}'";
+
+            cmd.Connection = con;
+
+            con.Open();
+
+            int rows = cmd.ExecuteNonQuery();
+
+            cmd.CommandText = "UPDATE Description  " +
+                              $"SET HairStyle = '{character.HairStyle}', HairColor = '{character.HairColor}', EyeColor = '{character.EyeColor}', " +
+                              $"SkinType = '{character.SkinType}', SkinColor = '{character.SkinColor}', RaceName = '{character.RaceName}'" +
+                              $"WHERE DescriptionID = '{character.DescriptionID}'";
+
+            rows += cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            return rows;
+
+            // Use this for add
+            // INSERT INTO Description(HairStyle, HairColor, EyeColor, SkinType, SkinColor, RaceName) " +
+            // $"VALUES ({character.HairStyle}, {character.HairColor}, {character.EyeColor}, {character.SkinType}, {character.SkinType}, {character.RaceName})";
         }
     }
 }
