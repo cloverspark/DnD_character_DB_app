@@ -118,7 +118,15 @@ namespace DNDCharaterDBApp
 
         public bool IsValid()
         {
-            if (CharacterTxtBx.Text == "")
+            if(CharacterListBx.SelectedItem == null)
+            {
+                MessageBox.Show("Please Choose a Character to Update", "Error"
+                                , MessageBoxButtons.OK
+                                , MessageBoxIcon.Error);
+                return false;
+            }
+
+            else if (CharacterTxtBx.Text == "")
             {
                 
                 MessageBox.Show("Please Enter a Character Name", "Error"
