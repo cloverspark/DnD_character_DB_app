@@ -20,6 +20,9 @@ namespace DNDCharaterDBApp
 
         private void UpdateCharacterForm_Load(object sender, EventArgs e)
         {
+            // Make all the textbox's disabled so user connot creat a character from the update frm
+            MakeAllTxtBxsDisabled();
+
             // Get all the Character Sheets and their Descriptions to display on int the list box
             List<CharactorAndDescription> characters = CharacterSheetAndDescriptionDB.GetAllCharacterInfo();
 
@@ -28,9 +31,17 @@ namespace DNDCharaterDBApp
 
         private void CharacterListBx_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Get the character class form the listbox
             CharactorAndDescription character = CharacterListBx.SelectedItem as CharactorAndDescription;
 
-            PopulateTxtBxs(character);
+            // Only continue if user actually clickes on a character and not whitespace in the listbox
+            if(character != null)
+            {
+                // Enable all the textbox's
+                MakeAllTxtBxsEnabled();
+
+                PopulateTxtBxs(character);
+            }
         }
 
         public void PopulateTxtBxs(CharactorAndDescription character)
@@ -83,6 +94,9 @@ namespace DNDCharaterDBApp
 
                 if(rows == 2)
                 {
+                    // Make all the textbox's disabled if update was successful
+                    MakeAllTxtBxsDisabled();
+
                     // Get all the Character Sheets and their Descriptions to display on int the list box
                     List<CharactorAndDescription> characters = CharacterSheetAndDescriptionDB.GetAllCharacterInfo();
 
@@ -198,6 +212,30 @@ namespace DNDCharaterDBApp
                 return false;
             }
             return true;
+        }
+
+        public void MakeAllTxtBxsDisabled()
+        {
+            CharacterTxtBx.Enabled = false;
+            HairStyleTxtBx.Enabled = false;
+            ClassTxtBx.Enabled = false;
+            HairColorTxtBx.Enabled = false;
+            EyeColorTxtBx.Enabled = false;
+            SkinTypeTxtBx.Enabled = false;
+            SkinColorTxtBx.Enabled = false;
+            RaceNameTxtBx.Enabled = false;
+        }
+
+        public void MakeAllTxtBxsEnabled()
+        {
+            CharacterTxtBx.Enabled = true;
+            HairStyleTxtBx.Enabled = true;
+            ClassTxtBx.Enabled = true;
+            HairColorTxtBx.Enabled = true;
+            EyeColorTxtBx.Enabled = true;
+            SkinTypeTxtBx.Enabled = true;
+            SkinColorTxtBx.Enabled = true;
+            RaceNameTxtBx.Enabled = true;
         }
     }
 }
