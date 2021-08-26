@@ -78,7 +78,7 @@ namespace DNDCharaterDBApp
             this.DescriptionDeleteBtn.Name = "DescriptionDeleteBtn";
             this.DescriptionDeleteBtn.Size = new System.Drawing.Size(101, 59);
             this.DescriptionDeleteBtn.TabIndex = 5;
-            this.DescriptionDeleteBtn.Text = "button2";
+            this.DescriptionDeleteBtn.Text = "Delete";
             this.DescriptionDeleteBtn.UseVisualStyleBackColor = true;
             // 
             // label2

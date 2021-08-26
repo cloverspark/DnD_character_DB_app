@@ -25,6 +25,7 @@ namespace DNDCharaterDBApp
         private void DeleteCharacterForm_Load(object sender, EventArgs e)
         {
             PopulateCurrentCharacterSheets();
+            PopulateCurrentDescriptions();
         }
         public void PopulateCurrentCharacterSheets()
         {
@@ -33,6 +34,14 @@ namespace DNDCharaterDBApp
             CharacterSheetCB.DisplayMember = nameof(CharaterSheet.result);
             CharacterSheetCB.ValueMember = nameof(CharaterSheet.SheetID);
             CharacterSheetCB.SelectedIndex = -1;
+        }
+        public void PopulateCurrentDescriptions() 
+        {
+            DataTable dt = DescriptionDatabase.GetAllDescriptions();
+            DescritionCB.DataSource = dt;
+            DescritionCB.DisplayMember = nameof(Description.result);
+            DescritionCB.ValueMember = nameof(Description.DescriptionID);
+            DescritionCB.SelectedIndex = -1;
         }
     }
 }
