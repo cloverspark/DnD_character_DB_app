@@ -27,8 +27,8 @@ namespace DNDCharaterDBApp
         {
             DataTable dt = CharacterSheetDatabase.GetAllSheets();
             CharacterSheetCB.DataSource = dt;
-            CharacterSheetCB.DisplayMember = nameof(CharaterSheet.result);
-            CharacterSheetCB.ValueMember = nameof(CharaterSheet.SheetID);
+            CharacterSheetCB.DisplayMember = nameof(CharacterSheet.result);
+            CharacterSheetCB.ValueMember = nameof(CharacterSheet.SheetID);
             CharacterSheetCB.SelectedIndex = -1; 
         }
 
