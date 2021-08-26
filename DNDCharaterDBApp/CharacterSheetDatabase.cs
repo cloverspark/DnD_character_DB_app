@@ -15,16 +15,16 @@ namespace DNDCharaterDBApp
 
 
 
-            SqlDataAdapter da = new SqlDataAdapter("select SheetID , CharacterName +', '+ ClassName as result, Description from CharaterSheet ", con);
+            SqlDataAdapter da = new SqlDataAdapter("select SheetID , CharacterName +', '+ ClassName as result from CharacterSheet ", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
         }
-        public static void Delete(CharaterSheet s)
+        public static void Delete(CharacterSheet s)
         {
             SqlConnection con = DbHelper.GetConnection();
 
-            string query = "DELETE FROM CharaterSheet " +
+            string query = "DELETE FROM CharacterSheet " +
                             "WHERE SheetID = @id";
             SqlCommand delCmd = new SqlCommand(query, con);
             delCmd.Parameters.AddWithValue("@id", s.SheetID);
@@ -36,7 +36,7 @@ namespace DNDCharaterDBApp
                 int rows = delCmd.ExecuteNonQuery();
                 if (rows != 1)
                 {
-                    throw new Exception("A CharaterSheet was not deleted!");
+                    throw new Exception("A CharacterSheet was not deleted!");
                 }
             }
             catch (SqlException se)

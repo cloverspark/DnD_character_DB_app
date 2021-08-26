@@ -17,7 +17,7 @@ namespace DNDCharaterDBApp
             // cmd is the query 
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText =  "SELECT * FROM Description JOIN CharterSheet ON Description.DescriptionID = CharterSheet.Description";
+            cmd.CommandText = "SELECT * FROM Description JOIN CharacterSheet ON Description.DescriptionID = CharacterSheet.Description";
 
             cmd.Connection = con;
 
@@ -64,7 +64,7 @@ namespace DNDCharaterDBApp
             // cmd is the query 
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "UPDATE CharterSheet " +
+            cmd.CommandText = "UPDATE CharacterSheet " +
                               $"SET CharacterName = '{character.CharacterName}', ClassName = '{character.ClassName}' " +
                               $"WHERE SheetID = '{character.SheetID}'";
 

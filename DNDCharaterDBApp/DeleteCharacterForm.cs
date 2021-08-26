@@ -25,8 +25,8 @@ namespace DNDCharaterDBApp
         {
             DataTable dt = CharacterSheetDatabase.GetAllSheets();
             CharacterSheetCB.DataSource = dt;
-            CharacterSheetCB.DisplayMember = nameof(CharaterSheet.result);
-            CharacterSheetCB.ValueMember = nameof(CharaterSheet.SheetID);
+            CharacterSheetCB.DisplayMember = nameof(CharacterSheet.result);
+            CharacterSheetCB.ValueMember = nameof(CharacterSheet.SheetID);
             CharacterSheetCB.SelectedIndex = -1;
         }
         public void PopulateCurrentDescriptions() 
@@ -40,7 +40,7 @@ namespace DNDCharaterDBApp
 
         private void CharacterDeleteBtn_Click(object sender, EventArgs e)
         {
-            CharaterSheet cs = new CharaterSheet();
+            CharacterSheet cs = new CharacterSheet();
             cs.SheetID = Convert.ToInt32(CharacterSheetCB.SelectedValue);
             CharacterSheetDatabase.Delete(cs);
             PopulateCurrentCharacterSheets();
