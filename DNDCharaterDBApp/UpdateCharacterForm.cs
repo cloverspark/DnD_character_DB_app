@@ -57,47 +57,50 @@ namespace DNDCharaterDBApp
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
-            CharactorAndDescription character = new CharactorAndDescription();
-
-            // This character is only used to get the character's SheetID and DescriptionID.
-            // Because we do not want the user to change the id's you don't get it form the
-            // form you get it from the selected character bacouse all of the info of the
-            // Character is stored in the list box
-            CharactorAndDescription charecterIDS = (CharactorAndDescription)CharacterListBx.SelectedItem;
-
-
-            character.SheetID = charecterIDS.SheetID;
-            character.DescriptionID = charecterIDS.DescriptionID;
-            character.CharacterName = CharacterTxtBx.Text;
-            character.HairStyle = HairStyleTxtBx.Text;
-            character.ClassName = ClassTxtBx.Text;
-            character.HairColor = HairColorTxtBx.Text;
-            character.EyeColor = EyeColorTxtBx.Text;
-            character.SkinType = SkinTypeTxtBx.Text;
-            character.SkinColor = SkinColorTxtBx.Text;
-            character.RaceName = RaceNameTxtBx.Text;
-
-            int rows = CharacterSheetAndDescriptionDB.UpdateCharacter(character);
-
-            if(rows == 2)
+            if(IsValid())
             {
-                // Get all the Character Sheets and their Descriptions to display on int the list box
-                List<CharactorAndDescription> characters = CharacterSheetAndDescriptionDB.GetAllCharacterInfo();
+                CharactorAndDescription character = new CharactorAndDescription();
 
-                PopulateCharacterListBx(characters);
+                // This character is only used to get the character's SheetID and DescriptionID.
+                // Because we do not want the user to change the id's you don't get it form the
+                // form you get it from the selected character bacouse all of the info of the
+                // Character is stored in the list box
+                CharactorAndDescription charecterIDS = (CharactorAndDescription)CharacterListBx.SelectedItem;
 
-                MessageBox.Show($"{character.CharacterName} was successfuly updated!", "Success"
-                                ,MessageBoxButtons.OK
-                                ,MessageBoxIcon.Information);
 
-                ClearAllTxtBxs();
-            }
+                character.SheetID = charecterIDS.SheetID;
+                character.DescriptionID = charecterIDS.DescriptionID;
+                character.CharacterName = CharacterTxtBx.Text;
+                character.HairStyle = HairStyleTxtBx.Text;
+                character.ClassName = ClassTxtBx.Text;
+                character.HairColor = HairColorTxtBx.Text;
+                character.EyeColor = EyeColorTxtBx.Text;
+                character.SkinType = SkinTypeTxtBx.Text;
+                character.SkinColor = SkinColorTxtBx.Text;
+                character.RaceName = RaceNameTxtBx.Text;
 
-            else
-            {
-                MessageBox.Show("Update Faild", "Error"
-                                ,MessageBoxButtons.OK
-                                ,MessageBoxIcon.Error);
+                int rows = CharacterSheetAndDescriptionDB.UpdateCharacter(character);
+
+                if(rows == 2)
+                {
+                    // Get all the Character Sheets and their Descriptions to display on int the list box
+                    List<CharactorAndDescription> characters = CharacterSheetAndDescriptionDB.GetAllCharacterInfo();
+
+                    PopulateCharacterListBx(characters);
+
+                    MessageBox.Show($"{character.CharacterName} was successfuly updated!", "Success"
+                                    ,MessageBoxButtons.OK
+                                    ,MessageBoxIcon.Information);
+
+                    ClearAllTxtBxs();
+                }
+
+                else
+                {
+                    MessageBox.Show("Update Faild", "Error"
+                                    ,MessageBoxButtons.OK
+                                    ,MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -115,12 +118,84 @@ namespace DNDCharaterDBApp
 
         public bool IsValid()
         {
-            if (CharacterTxtBx.Text == "")
+            if(CharacterListBx.SelectedItem == null)
             {
-                
-                MessageBox.Show("Please", "Error"
+                MessageBox.Show("Please Choose a Character to Update", "Error"
                                 , MessageBoxButtons.OK
                                 , MessageBoxIcon.Error);
+                return false;
+            }
+
+            else if (CharacterTxtBx.Text == "")
+            {
+                
+                MessageBox.Show("Please Enter a Character Name", "Error"
+                                , MessageBoxButtons.OK
+                                , MessageBoxIcon.Error);
+                return false;
+            }
+
+            else if (HairStyleTxtBx.Text == "")
+            {
+
+                MessageBox.Show("Please Enter a Hair Style", "Error"
+                                , MessageBoxButtons.OK
+                                , MessageBoxIcon.Error);
+                return false;
+            }
+
+            else if (ClassTxtBx.Text == "")
+            {
+
+                MessageBox.Show("Please Enter a Character Class", "Error"
+                                , MessageBoxButtons.OK
+                                , MessageBoxIcon.Error);
+                return false;
+            }
+
+            else if (HairColorTxtBx.Text == "")
+            {
+
+                MessageBox.Show("Please Enter a Hair Color", "Error"
+                                , MessageBoxButtons.OK
+                                , MessageBoxIcon.Error);
+                return false;
+            }
+
+            else if (EyeColorTxtBx.Text == "")
+            {
+
+                MessageBox.Show("Please Enter a Eye Color", "Error"
+                                , MessageBoxButtons.OK
+                                , MessageBoxIcon.Error);
+                return false;
+            }
+
+            else if (SkinTypeTxtBx.Text == "")
+            {
+
+                MessageBox.Show("Please Enter a Skin Type", "Error"
+                                , MessageBoxButtons.OK
+                                , MessageBoxIcon.Error);
+                return false;
+            }
+
+            else if (SkinColorTxtBx.Text == "")
+            {
+
+                MessageBox.Show("Please Enter a Skin Color", "Error"
+                                , MessageBoxButtons.OK
+                                , MessageBoxIcon.Error);
+                return false;
+            }
+
+            else if (RaceNameTxtBx.Text == "")
+            {
+
+                MessageBox.Show("Please Enter a Race", "Error"
+                                , MessageBoxButtons.OK
+                                , MessageBoxIcon.Error);
+                return false;
             }
             return true;
         }
