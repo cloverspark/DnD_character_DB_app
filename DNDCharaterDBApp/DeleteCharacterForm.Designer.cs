@@ -35,6 +35,7 @@ namespace DNDCharaterDBApp
             this.DescritionCB = new System.Windows.Forms.ComboBox();
             this.DescriptionDeleteBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // CharacterSheetCB
@@ -53,7 +54,7 @@ namespace DNDCharaterDBApp
             this.CharacterDeleteBtn.TabIndex = 1;
             this.CharacterDeleteBtn.Text = "Delete";
             this.CharacterDeleteBtn.UseVisualStyleBackColor = true;
-            this.CharacterDeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
+            this.CharacterDeleteBtn.Click += new System.EventHandler(this.CharacterDeleteBtn_Click);
             // 
             // label1
             // 
@@ -80,6 +81,7 @@ namespace DNDCharaterDBApp
             this.DescriptionDeleteBtn.TabIndex = 5;
             this.DescriptionDeleteBtn.Text = "Delete";
             this.DescriptionDeleteBtn.UseVisualStyleBackColor = true;
+            this.DescriptionDeleteBtn.Click += new System.EventHandler(this.DescriptionDeleteBtn_Click);
             // 
             // label2
             // 
@@ -90,11 +92,21 @@ namespace DNDCharaterDBApp
             this.label2.TabIndex = 6;
             this.label2.Text = "Current Description";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(40, 118);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(499, 20);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Can not delete current Description if being used by a Character Sheet";
+            // 
             // DeleteCharacterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(762, 247);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.DescriptionDeleteBtn);
             this.Controls.Add(this.DescritionCB);
@@ -117,5 +129,6 @@ namespace DNDCharaterDBApp
         private System.Windows.Forms.ComboBox DescritionCB;
         private System.Windows.Forms.Button DescriptionDeleteBtn;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -22,7 +22,7 @@ namespace DNDCharaterDBApp
         {
             SqlConnection con = DbHelper.GetConnection();
 
-            string query = "DELETE FROM Students " +
+            string query = "DELETE FROM Description " +
                             "WHERE DescriptionID = @id";
             SqlCommand delCmd = new SqlCommand(query, con);
             delCmd.Parameters.AddWithValue("@id", s.DescriptionID);

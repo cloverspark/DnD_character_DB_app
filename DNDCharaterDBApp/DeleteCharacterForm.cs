@@ -16,12 +16,6 @@ namespace DNDCharaterDBApp
         {
             InitializeComponent();
         }
-
-        private void DeleteBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void DeleteCharacterForm_Load(object sender, EventArgs e)
         {
             PopulateCurrentCharacterSheets();
@@ -42,6 +36,23 @@ namespace DNDCharaterDBApp
             DescritionCB.DisplayMember = nameof(Description.result);
             DescritionCB.ValueMember = nameof(Description.DescriptionID);
             DescritionCB.SelectedIndex = -1;
+        }
+
+        private void CharacterDeleteBtn_Click(object sender, EventArgs e)
+        {
+            CharaterSheet cs = new CharaterSheet();
+            cs.SheetID = Convert.ToInt32(CharacterSheetCB.SelectedValue);
+            CharacterSheetDatabase.Delete(cs);
+            PopulateCurrentCharacterSheets();
+        }
+
+        private void DescriptionDeleteBtn_Click(object sender, EventArgs e)
+        {
+            Description d = new Description();
+            d.DescriptionID = Convert.ToInt32(DescritionCB.SelectedValue);
+
+            DescriptionDatabase.Delete(d);
+            PopulateCurrentDescriptions();
         }
     }
 }
