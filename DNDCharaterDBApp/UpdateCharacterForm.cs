@@ -85,6 +85,12 @@ namespace DNDCharaterDBApp
                 List<CharactorAndDescription> characters = CharacterSheetAndDescriptionDB.GetAllCharacterInfo();
 
                 PopulateCharacterListBx(characters);
+
+                MessageBox.Show($"{character.CharacterName} was successfuly updated!", "Success"
+                                ,MessageBoxButtons.OK
+                                ,MessageBoxIcon.Information);
+
+                ClearAllTxtBxs();
             }
 
             else
@@ -92,10 +98,31 @@ namespace DNDCharaterDBApp
                 MessageBox.Show("Update Faild", "Error"
                                 ,MessageBoxButtons.OK
                                 ,MessageBoxIcon.Error);
-                MessageBox.Show(character.DescriptionID.ToString(), "Error"
+            }
+        }
+
+        public void ClearAllTxtBxs()
+        {
+            CharacterTxtBx.Text = "";
+            HairStyleTxtBx.Text = "";
+            ClassTxtBx.Text = "";
+            HairColorTxtBx.Text = "";
+            EyeColorTxtBx.Text = "";
+            SkinTypeTxtBx.Text = "";
+            SkinColorTxtBx.Text = "";
+            RaceNameTxtBx.Text = "";
+        }
+
+        public bool IsValid()
+        {
+            if (CharacterTxtBx.Text == "")
+            {
+                
+                MessageBox.Show("Please", "Error"
                                 , MessageBoxButtons.OK
                                 , MessageBoxIcon.Error);
             }
+            return true;
         }
     }
 }
