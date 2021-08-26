@@ -18,5 +18,34 @@ namespace DNDCharaterDBApp
             da.Fill(dt);
             return dt;
         }
+        public static void Delete(CharaterSheet s)
+        {
+            SqlConnection con = DbHelper.GetConnection();
+
+            string query = "DELETE FROM CharaterSheet " +
+                            "WHERE SheetID = @id";
+            SqlCommand delCmd = new SqlCommand(query, con);
+            delCmd.Parameters.AddWithValue("@id", s.SheetID);
+
+            try
+            {
+                con.Open();
+
+                int rows = delCmd.ExecuteNonQuery();
+                if (rows != 1)
+                {
+                    throw new Exception("A CharaterSheet was not deleted!");
+                }
+            }
+            catch (SqlException se)
+            {
+                // Log the error
+                throw se;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
 }
