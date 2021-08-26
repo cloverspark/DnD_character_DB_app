@@ -13,7 +13,9 @@ namespace DNDCharaterDBApp
         {
             SqlConnection con = DbHelper.GetConnection();
 
-            SqlDataAdapter da = new SqlDataAdapter("select SheetID , CharaterName +', '+ ClassName as result, Description from CharaterSheet ", con);
+
+
+            SqlDataAdapter da = new SqlDataAdapter("select SheetID , CharacterName +', '+ ClassName as result, Description from CharterSheet ", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
