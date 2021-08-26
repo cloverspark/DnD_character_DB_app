@@ -12,10 +12,10 @@ namespace DNDCharaterDBApp
     using System;
     using System.Collections.Generic;
 
-    public partial class CharterSheet
+    public partial class CharaterSheet
     {
         public int SheetID { get; set; }
-        public string CharterName { get; set; }
+        public string CharaterName { get; set; }
         public int Description { get; set; }
         public string className { get; set; }
         public string result { get; set; }

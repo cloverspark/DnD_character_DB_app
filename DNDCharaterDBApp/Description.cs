@@ -22,6 +22,6 @@ namespace DNDCharaterDBApp
         public string SkinType { get; set; }
         public string SkinColor { get; set; }
         public string RaceName { get; set; }
-    
+        public string result { get; set; }
     }
 }
