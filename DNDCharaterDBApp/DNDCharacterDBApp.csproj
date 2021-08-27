@@ -52,6 +52,12 @@
     <Compile Include="AddCharater.Designer.cs">
       <DependentUpon>AddCharater.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddDescriptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDescriptionForm.Designer.cs">
+      <DependentUpon>AddDescriptionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CharacterSheet.cs" />
     <Compile Include="CharacterSheetAndDescriptionDB.cs" />
     <Compile Include="CharacterSheetDatabase.cs" />

@@ -31,19 +31,20 @@ namespace DNDCharaterDBApp
 
         private void CurrentBtn_Click(object sender, EventArgs e)
         {
-            CurrentCharacterForm DCF = new CurrentCharacterForm();
-            DCF.ShowDialog();
+            CurrentCharacterForm CCF = new CurrentCharacterForm();
+            CCF.ShowDialog();
         }
 
-        private void AddBtn_Click(object sender, EventArgs e)
+        private void AddCharacterBtn_Click(object sender, EventArgs e)
         {
             AddCharaterForm ACF = new AddCharaterForm();
             ACF.ShowDialog();
         }
 
-        private void homeForm_Load(object sender, EventArgs e)
+        private void AddDescriptionBtn_Click(object sender, EventArgs e)
         {
-            
+            AddDescriptionForm ADF = new AddDescriptionForm();
+            ADF.ShowDialog();
         }
     }
 }
