@@ -29,7 +29,7 @@ namespace DNDCharaterDBApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.AddBtn = new System.Windows.Forms.Button();
+            this.AddCharacterBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.CurrentBtn = new System.Windows.Forms.Button();
@@ -37,20 +37,20 @@ namespace DNDCharaterDBApp
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.DeleteBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.AddDescriptionBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // AddBtn
+            // AddCharacterBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(59, 337);
-            this.AddBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(122, 69);
-            this.AddBtn.TabIndex = 5;
-            this.AddBtn.Text = " New Character";
-            this.AddBtn.UseVisualStyleBackColor = true;
-            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
+            this.AddCharacterBtn.Location = new System.Drawing.Point(59, 337);
+            this.AddCharacterBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AddCharacterBtn.Name = "AddCharacterBtn";
+            this.AddCharacterBtn.Size = new System.Drawing.Size(122, 69);
+            this.AddCharacterBtn.TabIndex = 5;
+            this.AddCharacterBtn.Text = " New Character";
+            this.AddCharacterBtn.UseVisualStyleBackColor = true;
+            this.AddCharacterBtn.Click += new System.EventHandler(this.AddCharacterBtn_Click);
             // 
             // label1
             // 
@@ -121,14 +121,15 @@ namespace DNDCharaterDBApp
             this.DeleteBtn.UseVisualStyleBackColor = true;
             this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
-            // button1
+            // AddDescriptionBtn
             // 
-            this.button1.Location = new System.Drawing.Point(59, 483);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 69);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "New Description";
-            this.button1.UseVisualStyleBackColor = true;
+            this.AddDescriptionBtn.Location = new System.Drawing.Point(59, 483);
+            this.AddDescriptionBtn.Name = "AddDescriptionBtn";
+            this.AddDescriptionBtn.Size = new System.Drawing.Size(122, 69);
+            this.AddDescriptionBtn.TabIndex = 8;
+            this.AddDescriptionBtn.Text = "New Description";
+            this.AddDescriptionBtn.UseVisualStyleBackColor = true;
+            this.AddDescriptionBtn.Click += new System.EventHandler(this.AddDescriptionBtn_Click);
             // 
             // label5
             // 
@@ -145,7 +146,7 @@ namespace DNDCharaterDBApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(613, 603);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.AddDescriptionBtn);
             this.Controls.Add(this.UpdateBtn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
@@ -153,12 +154,11 @@ namespace DNDCharaterDBApp
             this.Controls.Add(this.CurrentBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.AddBtn);
+            this.Controls.Add(this.AddCharacterBtn);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "homeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
-            this.Load += new System.EventHandler(this.homeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,7 +166,7 @@ namespace DNDCharaterDBApp
 
         #endregion
 
-        private System.Windows.Forms.Button AddBtn;
+        private System.Windows.Forms.Button AddCharacterBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button CurrentBtn;
@@ -174,7 +174,7 @@ namespace DNDCharaterDBApp
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button DeleteBtn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button AddDescriptionBtn;
         private System.Windows.Forms.Label label5;
     }
 }
