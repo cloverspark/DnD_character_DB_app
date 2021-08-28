@@ -49,5 +49,27 @@ namespace DNDCharaterDBApp
                 con.Close();
             }
         }
+        public static void Add(CharacterSheet cs)
+        {
+            SqlConnection con = DbHelper.GetConnection();
+
+            // Setup command object (query)
+            SqlCommand insertCmd = new SqlCommand();
+            insertCmd.Connection = con;
+            insertCmd.CommandText =
+                "INSERT INTO Registration(CharacterName, Description, ClassName) " +
+                "VALUES(@CharacterName, @Description, @ClassName)";
+            insertCmd.Parameters.AddWithValue("@CharacterName", cs.CharacterName);
+            insertCmd.Parameters.AddWithValue("@Description", cs.Description);
+            insertCmd.Parameters.AddWithValue("@ClassName", cs.ClassName);
+
+            con.Open();
+
+            // Execute command
+            insertCmd.ExecuteNonQuery();
+
+            // Close connection
+            con.Close();
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +9,10 @@ namespace DNDCharaterDBApp
 {
     static class DescriptionDatabase
     {
+        /// <summary>
+        /// grabs all descriptions from data base
+        /// </summary>
+        /// <returns>a data table with all current descriptions</returns>
         public static DataTable GetAllDescriptions()
         {
             SqlConnection con = DbHelper.GetConnection();
@@ -20,6 +24,7 @@ namespace DNDCharaterDBApp
         }
         public static void Delete(Description s)
         {
+            // Connect to Database
             SqlConnection con = DbHelper.GetConnection();
 
             string query = "DELETE FROM Description " +
@@ -46,6 +51,31 @@ namespace DNDCharaterDBApp
             {
                 con.Close();
             }
+        }
+        public static void Add(Description d)
+        {
+            SqlConnection con = DbHelper.GetConnection();
+
+            // Setup command object (query)
+            SqlCommand insertCmd = new SqlCommand();
+            insertCmd.Connection = con;
+            insertCmd.CommandText =
+                "INSERT INTO Description(HairStyle, HairColor, EyeColor, SkinType, SkinColor, RaceName) " +
+                "VALUES(@HairStyle, @HairColor, @EyeColor, @SkinType, ,@SkinColor, @RaceName)";
+            insertCmd.Parameters.AddWithValue("@HairStyle", d.HairStyle);
+            insertCmd.Parameters.AddWithValue("@HairColor", d.HairColor);
+            insertCmd.Parameters.AddWithValue("@EyeColor", d.EyeColor);
+            insertCmd.Parameters.AddWithValue("@SkinType", d.SkinType);
+            insertCmd.Parameters.AddWithValue("@SkinColor", d.SkinColor);
+            insertCmd.Parameters.AddWithValue("@RaceName", d.RaceName);
+            
+            con.Open();
+
+            // Execute command
+            insertCmd.ExecuteNonQuery();
+
+            // Close connection
+            con.Close();
         }
     }
 }
