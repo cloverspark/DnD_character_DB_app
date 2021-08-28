@@ -17,7 +17,7 @@ namespace DNDCharaterDBApp
         public int SheetID { get; set; }
         public string CharacterName { get; set; }
         public int Description { get; set; }
-        public string className { get; set; }
+        public string ClassName { get; set; }
         public string result { get; set; }
 
     }
