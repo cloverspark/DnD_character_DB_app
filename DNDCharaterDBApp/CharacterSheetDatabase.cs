@@ -57,7 +57,7 @@ namespace DNDCharaterDBApp
             SqlCommand insertCmd = new SqlCommand();
             insertCmd.Connection = con;
             insertCmd.CommandText =
-                "INSERT INTO Registration(CharacterName, Description, ClassName) " +
+                "INSERT INTO CharacterSheet(CharacterName, Description, ClassName) " +
                 "VALUES(@CharacterName, @Description, @ClassName)";
             insertCmd.Parameters.AddWithValue("@CharacterName", cs.CharacterName);
             insertCmd.Parameters.AddWithValue("@Description", cs.Description);
