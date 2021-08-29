@@ -99,6 +99,9 @@
     <EmbeddedResource Include="AddCharater.resx">
       <DependentUpon>AddCharater.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddDescriptionForm.resx">
+      <DependentUpon>AddDescriptionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CurrentCharacterForm.resx">
       <DependentUpon>CurrentCharacterForm.cs</DependentUpon>
     </EmbeddedResource>

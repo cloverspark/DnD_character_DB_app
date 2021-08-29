@@ -61,7 +61,7 @@ namespace DNDCharaterDBApp
             insertCmd.Connection = con;
             insertCmd.CommandText =
                 "INSERT INTO Description(HairStyle, HairColor, EyeColor, SkinType, SkinColor, RaceName) " +
-                "VALUES(@HairStyle, @HairColor, @EyeColor, @SkinType, ,@SkinColor, @RaceName)";
+                "VALUES(@HairStyle, @HairColor, @EyeColor, @SkinType, @SkinColor, @RaceName)";
             insertCmd.Parameters.AddWithValue("@HairStyle", d.HairStyle);
             insertCmd.Parameters.AddWithValue("@HairColor", d.HairColor);
             insertCmd.Parameters.AddWithValue("@EyeColor", d.EyeColor);
