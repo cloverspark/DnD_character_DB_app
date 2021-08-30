@@ -17,7 +17,7 @@ namespace DNDCharaterDBApp
         {
             SqlConnection con = DbHelper.GetConnection();
 
-            SqlDataAdapter da = new SqlDataAdapter("select DescriptionID, HairStyle+', '+HairColor+', '+EyeColor+', '+SkinColor+', '+SkinColor+', '+RaceName as result from [Description]", con);
+            SqlDataAdapter da = new SqlDataAdapter("select DescriptionID, HairStyle+', '+HairColor+', '+EyeColor+', '+SkinType+', '+SkinColor+', '+RaceName as result from [Description]", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
